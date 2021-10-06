@@ -6,23 +6,29 @@ import './App.css'
 
 function App() {
   const [data, setData] = useState(null)
+  const [loaded, setLoaded] = useState(false)
 
   useEffect(() => {
     const config = { params: { api_key: API_KEY } }
     axios
       .get(BASE_URL, config)
       .then((res) => {
-        const data = res.data
-        setData(() => data)
+        setData(() => res.data)
       })
       .catch((err) => console.log(err))
   }, [])
 
+  useEffect(() => {
+    setLoaded(true)
+  }, [data])
+
+  if (!loaded) return <h3>loading...</h3>
+
   return (
-    <div className='App'>
-      <p>Hello world</p>
+    <main className='App'>
+      <p>hello world</p>
       <Card data={data} />
-    </div>
+    </main>
   )
 }
 
