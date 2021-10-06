@@ -6,7 +6,7 @@ import DateText from './DateText'
 export default function InformationSection({ title, author, description, date, placeholder }) {
   if (placeholder) {
     return (
-      <section>
+      <section class='information placeholder'>
         <HeaderText placeholder />
         <DescriptionText placeholder />
 
@@ -16,7 +16,7 @@ export default function InformationSection({ title, author, description, date, p
   }
 
   return (
-    <section>
+    <section class='information'>
       <HeaderText title={title} author={author} />
       <DescriptionText description={description} />
 

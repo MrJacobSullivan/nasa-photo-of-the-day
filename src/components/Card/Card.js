@@ -5,15 +5,15 @@ import InformationSection from './InformationSection'
 export default function Card({ loaded, data }) {
   if (!loaded) {
     return (
-      <section>
+      <div className='card placeholder'>
         <MediaSection placeholder />
         <InformationSection placeholder />
-      </section>
+      </div>
     )
   }
 
   return (
-    <section>
+    <div className='card'>
       <MediaSection href={data.hdurl} src={data.url} />
       <InformationSection
         title={data.title}
@@ -21,6 +21,6 @@ export default function Card({ loaded, data }) {
         description={data.explanation}
         date={data.date}
       />
-    </section>
+    </div>
   )
 }
