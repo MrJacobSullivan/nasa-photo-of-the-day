@@ -13,21 +13,19 @@ function App() {
     axios
       .get(BASE_URL, config)
       .then((res) => {
+        console.log(res.data)
         setData(() => res.data)
       })
       .catch((err) => console.log(err))
   }, [])
 
   useEffect(() => {
-    setLoaded(true)
+    if (data !== null) setLoaded(true)
   }, [data])
-
-  if (!loaded) return <h3>loading...</h3>
 
   return (
     <main className='App'>
-      <p>hello world</p>
-      <Card data={data} />
+      <Card loaded={loaded} data={data} />
     </main>
   )
 }

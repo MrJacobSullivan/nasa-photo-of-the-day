@@ -1,11 +1,19 @@
 import React from 'react'
 
-export default function Media({ href, url }) {
+export default function MediaSection({ loaded, href, src }) {
+  if (!loaded) {
+    return (
+      <section>
+        <p>img goes here</p>
+      </section>
+    )
+  }
+
   return (
-    <div>
+    <section>
       <a href={href}>
-        <img src={url} alt='example alt' />
+        <img src={src} alt='example alt' />
       </a>
-    </div>
+    </section>
   )
 }

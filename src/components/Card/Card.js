@@ -1,22 +1,22 @@
 import React, { useState, useEffect } from 'react'
-import Media from './MediaSection'
+import MediaSection from './MediaSection'
 import InformationSection from './InformationSection'
 
-export default function Card({ data }) {
-  const [loaded, setLoaded] = useState(false)
-
-  useEffect(() => {
-    setLoaded(() => true)
-  }, [data])
-
+export default function Card({ loaded, data }) {
   if (!loaded) {
-    return <p>loading...</p>
+    return (
+      <section>
+        <MediaSection />
+        <InformationSection title='hello world' />
+      </section>
+    )
   }
 
   return (
     <section>
-      {/* <Media href={data.hdhref} src={data.href} /> */}
+      <MediaSection loaded={loaded} href={data.hdurl} src={data.url} />
       <InformationSection
+        loaded={loaded}
         title={data.title}
         author={data.copyright}
         description={data.explanation}
