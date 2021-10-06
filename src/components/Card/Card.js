@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import MediaSection from './MediaSection'
 import InformationSection from './InformationSection'
 
@@ -6,20 +6,20 @@ export default function Card({ loaded, data }) {
   if (!loaded) {
     return (
       <section>
-        <MediaSection />
-        <InformationSection title='hello world' />
+        <MediaSection placeholder />
+        <InformationSection placeholder />
       </section>
     )
   }
 
   return (
     <section>
-      <MediaSection loaded={loaded} href={data.hdurl} src={data.url} />
+      <MediaSection href={data.hdurl} src={data.url} />
       <InformationSection
-        loaded={loaded}
         title={data.title}
         author={data.copyright}
         description={data.explanation}
+        date={data.date}
       />
     </section>
   )

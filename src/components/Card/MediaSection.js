@@ -1,7 +1,7 @@
 import React from 'react'
 
-export default function MediaSection({ loaded, href, src }) {
-  if (!loaded) {
+export default function MediaSection({ href, src, placeholder }) {
+  if (placeholder) {
     return (
       <section>
         <p>img goes here</p>
