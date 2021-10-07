@@ -19,7 +19,15 @@
   align-items: center;
 }
 
-.media img {
-  max-width: 100%;
+.media div {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.media a img {
   max-height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  position: absolute;
 }
