@@ -7,8 +7,8 @@ export default function useFetchData(date) {
 
   useEffect(() => {
     const key = `?api_key=${API_KEY}`
-    const dateQuery = date ? `&date=${date}` : null
-    const query = `${BASE_URL}${key}${date ? dateQuery : ''}`
+    const dateQuery = date ? `&date=${date}` : ''
+    const query = `${BASE_URL}${key}${dateQuery}`
 
     axios
       .get(query)

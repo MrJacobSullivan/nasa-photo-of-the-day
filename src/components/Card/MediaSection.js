@@ -11,16 +11,14 @@ export default function MediaSection({ href, src, mediaType, placeholder }) {
   }
 
   if (mediaType === 'video') {
-    return <ReactPlayer url={src} width='100%' height='100%' playing />
+    return <ReactPlayer url={src} width='100%' height='calc(95vh * 0.6)' playing />
   }
 
   return (
     <section className='media'>
-      <div>
-        <a href={href} target='_blank' rel='noopener noreferrer'>
-          <img src={src} alt='example alt' />
-        </a>
-      </div>
+      <a href={href} target='_blank' rel='noopener noreferrer'>
+        <img src={src} alt='example alt' />
+      </a>
     </section>
   )
 }
