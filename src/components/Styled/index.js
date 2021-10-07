@@ -5,17 +5,21 @@ export const MainContainer = styled.main`
   justify-content: center;
   align-items: center;
   height: 100vh;
+
+  background: ${({ theme }) => theme.text};
+  color: ${({ theme }) => theme.text};
 `
 
 export const CardContainer = styled.section`
   width: 45%;
-  height: 95vh;
-  background: red;
+  height: auto;
+  filter: drop-shadow(0 25px 25px rgba(0, 0, 0, 0.2));
 `
 
 export const MediaContainer = styled.section`
   height: 60vh;
-  background: #333;
+  border-radius: 2px 2px 0 0;
+  background: ${({ theme }) => theme.secondary};
 
   a {
     height: 100%;
@@ -33,9 +37,10 @@ export const MediaContainer = styled.section`
 `
 
 export const InformationContainer = styled.section`
-  background: blue;
+  height: 35vh;
+  border-radius: 0 0 2px 2px;
 
-  ${({ placeholder }) => (placeholder ? `background: #fdd835;` : null)}
+  background: ${({ theme }) => theme.background};
 `
 
 export const H1Text = styled.h1`
