@@ -14,7 +14,7 @@ export default function Card({ loaded, data, children }) {
 
   return (
     <div className='card'>
-      <MediaSection href={data.hdurl} src={data.url} />
+      <MediaSection href={data.hdurl || null} src={data.url} mediaType={data.media_type} />
       <InformationSection
         title={data.title}
         author={data.copyright}
