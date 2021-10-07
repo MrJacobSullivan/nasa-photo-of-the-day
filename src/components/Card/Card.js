@@ -2,7 +2,7 @@ import React from 'react'
 import MediaSection from './MediaSection'
 import InformationSection from './InformationSection'
 
-export default function Card({ loaded, data }) {
+export default function Card({ loaded, data, children }) {
   if (!loaded) {
     return (
       <div className='card placeholder'>
@@ -20,7 +20,9 @@ export default function Card({ loaded, data }) {
         author={data.copyright}
         description={data.explanation}
         date={data.date}
-      />
+      >
+        {children}
+      </InformationSection>
     </div>
   )
 }

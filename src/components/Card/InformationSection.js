@@ -3,7 +3,14 @@ import HeaderText from './HeaderText'
 import DescriptionText from './DescriptionText'
 import DateText from './DateText'
 
-export default function InformationSection({ title, author, description, date, placeholder }) {
+export default function InformationSection({
+  title,
+  author,
+  description,
+  date,
+  placeholder,
+  children,
+}) {
   if (placeholder) {
     return (
       <section className='information placeholder'>
@@ -20,7 +27,7 @@ export default function InformationSection({ title, author, description, date, p
       <HeaderText title={title} author={author} />
       <DescriptionText description={description} />
 
-      <DateText date={date} />
+      <div className='date-container'>{children}</div>
     </section>
   )
 }
