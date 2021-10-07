@@ -1,4 +1,5 @@
 import React from 'react'
+import { PText } from '../Styled'
 
 export default function DescriptionText({ description, placeholder }) {
   if (placeholder) {
@@ -10,8 +11,8 @@ export default function DescriptionText({ description, placeholder }) {
   }
 
   return (
-    <div className='description-text'>
+    <PText>
       <p>{description}</p>
-    </div>
+    </PText>
   )
 }

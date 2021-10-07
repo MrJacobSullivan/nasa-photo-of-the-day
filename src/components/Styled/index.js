@@ -4,22 +4,25 @@ export const MainContainer = styled.main`
   display: flex;
   justify-content: center;
   align-items: center;
+
   height: 100vh;
 
-  background: ${({ theme }) => theme.text};
-  color: ${({ theme }) => theme.text};
+  background: ${({ theme }) => theme.dark};
+
+  color: ${({ theme }) => theme.dark};
 `
 
 export const CardContainer = styled.section`
-  width: 45%;
+  width: 42vw;
   height: auto;
+
   filter: drop-shadow(0 25px 25px rgba(0, 0, 0, 0.2));
 `
 
 export const MediaContainer = styled.section`
   height: 60vh;
   border-radius: 2px 2px 0 0;
-  background: ${({ theme }) => theme.secondary};
+  background: ${({ theme }) => theme.backdrop};
 
   a {
     height: 100%;
@@ -31,22 +34,42 @@ export const MediaContainer = styled.section`
   a img {
     max-height: 60vh;
     max-width: 100%;
-    padding: 0;
-    margin: 0;
   }
 `
 
 export const InformationContainer = styled.section`
-  height: 35vh;
   border-radius: 0 0 2px 2px;
+  padding: 2%;
+  height: 32vh;
+  display: flex;
 
-  background: ${({ theme }) => theme.background};
+  background: ${({ theme }) => theme.light};
+`
+
+export const TextContainer = styled.div`
+  margin-right: 2%;
+  display: flex;
+  flex-direction: column;
 `
 
 export const H1Text = styled.h1`
   font-size: 1.4rem;
+  margin-bottom: 2%;
+  font-weight: 500;
 `
 
 export const H2Text = styled.h2`
+  font-size: 0.8rem;
+  margin-bottom: 5%;
+  font-weight: 300;
+`
+export const PText = styled.p`
+  text-align: justify;
+  line-height: 1.5;
+  flex-grow: 1;
+
+  overflow: hidden;
+  text-overflow: clip;
+
   font-size: 0.8rem;
 `

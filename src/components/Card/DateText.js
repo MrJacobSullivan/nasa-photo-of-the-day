@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function DateText({ date, placeholder, children }) {
+export default function DateText({ placeholder, children }) {
   if (placeholder) {
     return (
       <div className='date-text placeholder'>

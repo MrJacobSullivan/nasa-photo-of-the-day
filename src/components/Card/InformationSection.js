@@ -1,5 +1,5 @@
 import React from 'react'
-import { InformationContainer } from '../Styled'
+import { InformationContainer, TextContainer } from '../Styled'
 import HeaderText from './HeaderText'
 import DescriptionText from './DescriptionText'
 import DateText from './DateText'
@@ -25,10 +25,12 @@ export default function InformationSection({
 
   return (
     <InformationContainer>
-      <HeaderText title={title} author={author} />
-      <DescriptionText description={description} />
+      <TextContainer>
+        <HeaderText title={title} author={author} />
+        <DescriptionText description={description} />
+      </TextContainer>
 
-      <div className='date-container'>{children}</div>
+      <DateText>{children}</DateText>
     </InformationContainer>
   )
 }
