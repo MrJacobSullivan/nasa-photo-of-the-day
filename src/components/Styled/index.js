@@ -67,8 +67,9 @@ export const PText = styled.p`
   text-align: justify;
   line-height: 1.5;
   flex-grow: 1;
+  margin-bottom: 5%;
 
-  overflow: hidden;
+  overflow-y: scroll;
   text-overflow: clip;
 
   font-size: 0.8rem;

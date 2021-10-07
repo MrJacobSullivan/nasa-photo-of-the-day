@@ -1,26 +1,35 @@
 import React, { useState, useEffect } from 'react'
-import { MainContainer } from './components/Styled'
+import DatePicker from 'react-datepicker'
 import Card from './components/Card/Card'
-import Date from './components/Card/Date'
+import { MainContainer } from './components/Styled'
+
+import useDate from './hooks/useDate'
 import useFetchData from './hooks/useFetchData'
 import useExampleData from './hooks/useExampleData'
+
+import 'react-datepicker/dist/react-datepicker.css'
 import './App.css'
 
 function App() {
-  const [date, setDate] = useState(null)
   const [loaded, setLoaded] = useState(false)
 
+  const [date, startDate, setDate] = useDate()
   // const data = useFetchData(date)
   const data = useExampleData('image')
 
   useEffect(() => {
     if (data !== null) setLoaded(true)
-  }, [data])
+  }, [data, date])
 
   return (
     <MainContainer>
       <Card loaded={loaded} data={data}>
-        <Date onDateChange={(newDate) => setDate(() => newDate)} />
+        <DatePicker
+          selected={startDate}
+          onChange={(newDate) => setDate(() => newDate)}
+          maxDate={new Date()}
+          inline
+        />
       </Card>
     </MainContainer>
   )
