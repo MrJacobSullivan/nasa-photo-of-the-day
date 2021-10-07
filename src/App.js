@@ -15,10 +15,12 @@ function App() {
     if (data !== null) setLoaded(true)
   }, [data])
 
+  useEffect(() => {}, [date])
+
   return (
     <main className='container'>
       <Card loaded={loaded} data={data}>
-        <Date />
+        <Date onDateChange={(newDate) => setDate(() => newDate)} />
       </Card>
     </main>
   )

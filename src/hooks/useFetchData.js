@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { BASE_URL, API_KEY } from '../constants'
 
@@ -17,7 +17,7 @@ export default function useFetchData(date) {
         setData(() => res.data)
       })
       .catch((err) => console.log(err))
-  }, [])
+  }, [date])
 
   return data
 }

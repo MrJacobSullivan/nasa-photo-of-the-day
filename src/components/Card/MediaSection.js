@@ -12,7 +12,7 @@ export default function MediaSection({ href, src, placeholder }) {
   return (
     <section className='media'>
       <div>
-        <a href={href}>
+        <a href={href} target='_blank' rel='noopener noreferrer'>
           <img src={src} alt='example alt' />
         </a>
       </div>
