@@ -1,12 +1,13 @@
 import React from 'react'
 import ReactPlayer from 'react-player'
+import { MediaContainer } from '../Styled'
 
 export default function MediaSection({ href, src, mediaType, placeholder }) {
   if (placeholder) {
     return (
-      <section className='media placeholder'>
+      <MediaContainer placeholder>
         <p>img goes here</p>
-      </section>
+      </MediaContainer>
     )
   }
 
@@ -15,10 +16,10 @@ export default function MediaSection({ href, src, mediaType, placeholder }) {
   }
 
   return (
-    <section className='media'>
+    <MediaContainer>
       <a href={href} target='_blank' rel='noopener noreferrer'>
         <img src={src} alt='example alt' />
       </a>
-    </section>
+    </MediaContainer>
   )
 }

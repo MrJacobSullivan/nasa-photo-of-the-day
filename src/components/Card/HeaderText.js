@@ -1,4 +1,5 @@
 import React from 'react'
+import { H1Text, H2Text } from '../Styled'
 
 export default function HeaderText({ title, author, placeholder }) {
   if (placeholder) {
@@ -12,8 +13,8 @@ export default function HeaderText({ title, author, placeholder }) {
 
   return (
     <div className='header-text'>
-      <h1>{title}</h1>
-      <h2>{author}</h2>
+      <H1Text>{title}</H1Text>
+      <H2Text>{author}</H2Text>
     </div>
   )
 }

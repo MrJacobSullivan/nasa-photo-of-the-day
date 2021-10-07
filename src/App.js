@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { MainContainer } from './components/Styled'
 import Card from './components/Card/Card'
 import Date from './components/Card/Date'
 import useFetchData from './hooks/useFetchData'
@@ -17,11 +18,11 @@ function App() {
   }, [data])
 
   return (
-    <main className='container'>
+    <MainContainer>
       <Card loaded={loaded} data={data}>
         <Date onDateChange={(newDate) => setDate(() => newDate)} />
       </Card>
-    </main>
+    </MainContainer>
   )
 }
 

@@ -1,31 +1,8 @@
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.card {
-  width: 45%;
-  height: 95vh;
-  background: red;
-}
-
 .media {
-  height: 60vh;
-  background: #333;
 }
 
 .media a {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .media a img {
-  max-height: 60vh;
-  max-width: 100%;
-  padding: 0;
-  margin: 0;
 }

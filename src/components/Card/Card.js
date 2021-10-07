@@ -1,19 +1,20 @@
 import React from 'react'
+import { CardContainer } from '../Styled'
 import MediaSection from './MediaSection'
 import InformationSection from './InformationSection'
 
 export default function Card({ loaded, data, children }) {
   if (!loaded) {
     return (
-      <div className='card placeholder'>
+      <CardContainer>
         <MediaSection placeholder />
         <InformationSection placeholder />
-      </div>
+      </CardContainer>
     )
   }
 
   return (
-    <div className='card'>
+    <CardContainer>
       <MediaSection href={data.hdurl || null} src={data.url} mediaType={data.media_type} />
       <InformationSection
         title={data.title}
@@ -23,6 +24,6 @@ export default function Card({ loaded, data, children }) {
       >
         {children}
       </InformationSection>
-    </div>
+    </CardContainer>
   )
 }

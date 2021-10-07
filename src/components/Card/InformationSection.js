@@ -1,4 +1,5 @@
 import React from 'react'
+import { InformationContainer } from '../Styled'
 import HeaderText from './HeaderText'
 import DescriptionText from './DescriptionText'
 import DateText from './DateText'
@@ -13,21 +14,21 @@ export default function InformationSection({
 }) {
   if (placeholder) {
     return (
-      <section className='information placeholder'>
+      <InformationContainer placeholder>
         <HeaderText placeholder />
         <DescriptionText placeholder />
 
         <DateText placeholder />
-      </section>
+      </InformationContainer>
     )
   }
 
   return (
-    <section className='information'>
+    <InformationContainer>
       <HeaderText title={title} author={author} />
       <DescriptionText description={description} />
 
       <div className='date-container'>{children}</div>
-    </section>
+    </InformationContainer>
   )
 }
