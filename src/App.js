@@ -14,8 +14,8 @@ function App() {
   const [loaded, setLoaded] = useState(false)
 
   const [date, startDate, setDate] = useDate()
-  // const data = useFetchData(date)
-  const data = useExampleData('image')
+  const data = useFetchData(date)
+  // const data = useExampleData('image')
 
   useEffect(() => {
     if (data !== null) setLoaded(true)

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { exampleData } from '../exampleData'
 
-export default function useFetchData(type) {
+export default function useExampleData(type) {
   const [data, setData] = useState(null)
 
   setTimeout(() => {
